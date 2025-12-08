@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function News() {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [email, setEmail] = useState("");
 
   const categories = [
     { id: "all", name: "Tout voir" },
@@ -19,7 +20,7 @@ export default function News() {
       title: "Lancement du nouveau programme de formation agricole",
       category: "project",
       date: "15 Novembre 2024",
-      image: "🌾",
+      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&h=600&fit=crop",
       excerpt:
         "La SCOOP DOGUI-KARALA lance un programme innovant de formation pour 200 agriculteurs locaux.",
       entity: "SCOOP",
@@ -29,7 +30,7 @@ export default function News() {
       title: "Inauguration du nouveau centre d'affaires",
       category: "event",
       date: "3 Novembre 2024",
-      image: "🏢",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
       excerpt:
         "Le Multi Business Center ouvre ses portes avec des infrastructures modernes et équipées.",
       entity: "MBC",
@@ -39,7 +40,7 @@ export default function News() {
       title: "Distribution de kits scolaires à 500 enfants",
       category: "success",
       date: "20 Octobre 2024",
-      image: "📚",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
       excerpt:
         "La Fondation DOGUI-KARALA a distribué des fournitures scolaires dans 10 écoles rurales.",
       entity: "Fondation",
@@ -49,7 +50,7 @@ export default function News() {
       title: "Partenariat stratégique avec une ONG internationale",
       category: "news",
       date: "10 Octobre 2024",
-      image: "🤝",
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop",
       excerpt:
         "MAGIC GROUP signe un accord de partenariat pour renforcer son impact social.",
       entity: "MAGIC GROUP",
@@ -59,7 +60,7 @@ export default function News() {
       title: "Nouvelle récolte record pour la SCOOP",
       category: "success",
       date: "25 Septembre 2024",
-      image: "🎉",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop",
       excerpt:
         "Les membres de la coopérative célèbrent une augmentation de 30% de leur production.",
       entity: "SCOOP",
@@ -69,7 +70,7 @@ export default function News() {
       title: "Workshop sur la transformation digitale",
       category: "event",
       date: "15 Septembre 2024",
-      image: "💻",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
       excerpt:
         "Le MBC organise un atelier de 3 jours sur les nouvelles technologies pour les PME.",
       entity: "MBC",
@@ -81,30 +82,36 @@ export default function News() {
       ? articles
       : articles.filter((article) => article.category === selectedCategory);
 
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    console.log("Newsletter subscription:", email);
+    setEmail("");
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-emerald-900 to-emerald-700 text-white">
+      <section className="relative py-12 bg-gradient-to-br from-emerald-400 to-emerald-300 text-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Actualités & Projets</h1>
-          <p className="text-xl max-w-3xl text-emerald-100">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Actualités & Projets</h1>
+          <p className="text-lg max-w-3xl text-gray-800">
             Suivez nos dernières réalisations et nos projets en cours
           </p>
         </div>
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 bg-white border-b sticky top-20 z-40">
+      <section className="py-8 bg-white border-b sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-3 justify-center">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
+                className={`px-6 py-2.5 rounded-full font-medium transition-all shadow-sm ${
                   selectedCategory === category.id
-                    ? "bg-emerald-700 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-md scale-105"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105"
                 }`}
               >
                 {category.name}
@@ -128,83 +135,33 @@ export default function News() {
               {filteredArticles.map((article) => (
                 <article
                   key={article.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1"
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 group"
                 >
-                  <div className="h-48 bg-gradient-to-br from-emerald-100 to-emerald-50 flex items-center justify-center">
-                    <span className="text-8xl">{article.image}</span>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-sm font-medium text-emerald-700">
+                  <div className="relative h-56 overflow-hidden">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-emerald-700 text-xs font-bold rounded-full">
                         {article.entity}
                       </span>
-                      <span className="text-sm text-gray-500">{article.date}</span>
+                      <span className="text-xs text-white font-medium">{article.date}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-emerald-600 transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{article.excerpt}</p>
-                    <button className="text-emerald-700 font-semibold hover:text-emerald-600 flex items-center">
-                      Lire la suite
-                      <svg
-                        className="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </button>
+                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">{article.excerpt}</p>
+            
                   </div>
                 </article>
               ))}
             </div>
           )}
-
-          {/* Pagination (placeholder) */}
-          {filteredArticles.length > 0 && (
-            <div className="mt-12 flex justify-center gap-2">
-              <button className="px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-600">
-                1
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
-                2
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
-                3
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Restez informé de nos actualités
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Inscrivez-vous à notre newsletter pour recevoir nos dernières nouvelles
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Votre email"
-              className="flex-1 px-6 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
-            />
-            <button
-              type="submit"
-              className="px-8 py-3 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-600 transition-all whitespace-nowrap"
-            >
-              S'inscrire
-            </button>
-          </form>
         </div>
       </section>
     </div>

@@ -139,61 +139,93 @@ export default function Fondation() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-red-900 via-red-800 to-red-700 text-white">
+      {/* Hero Section - Reduced Height with Light Green */}
+      <section className="relative py-16 bg-gradient-to-br from-emerald-50 via-emerald-100 to-teal-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="text-6xl">❤️</div>
+          <div className="flex items-center gap-4 mb-4">
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold">Fondation DOGUI-KARALA</h1>
-              <p className="text-2xl text-red-200 mt-2">Ensemble pour un avenir meilleur</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Fondation DOGUI-KARALA</h1>
+              <p className="text-xl text-gray-700 mt-2">Ensemble pour un avenir meilleur</p>
             </div>
           </div>
-          <p className="text-xl max-w-3xl text-red-100 mt-6">
-            Une fondation engagée pour le développement social et communautaire à travers
-            des programmes d'éducation, de santé et d'autonomisation.
+          <p className="text-lg max-w-3xl text-gray-600 mt-4">
+            Une fondation qui assiste, forme et travaille à améliorer la vie des femmes, 
+            enfants et personnes du troisième âge.
           </p>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Mission Section - Text Left, Modern Image Right */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Text Content */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
                 Notre Mission
               </h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
+              <div className="space-y-5 text-gray-600 leading-relaxed">
+                <p className="text-lg">
                   La Fondation DOGUI-KARALA a pour mission d'améliorer les conditions de vie
                   des populations vulnérables en Côte d'Ivoire, en particulier les femmes,
                   les enfants et les personnes âgées.
                 </p>
-                <p>
+                <p className="text-lg">
                   Nous croyons fermement que chaque individu mérite l'opportunité de réaliser
                   son plein potentiel. C'est pourquoi nous intervenons dans des domaines clés
                   comme l'éducation, la santé, l'autonomisation économique et le développement
                   communautaire.
                 </p>
-                <p>
+                <p className="text-lg">
                   À travers nos programmes et nos partenariats, nous travaillons à créer un
                   impact durable et mesurable dans les communautés où nous intervenons.
                 </p>
               </div>
-            </div>
-            <div className="bg-red-700 rounded-3xl p-12 text-white">
-              <h3 className="text-3xl font-bold mb-8">Notre Impact</h3>
-              <div className="space-y-8">
+
+              {/* Impact Stats Grid */}
+              <div className="grid grid-cols-2 gap-4 mt-8">
                 {impacts.map((impact, index) => (
-                  <div key={index}>
+                  <div key={index} className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-200">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">{impact.icon}</span>
-                      <span className="text-4xl font-bold">{impact.number}</span>
+                      <span className="text-2xl">{impact.icon}</span>
+                      <span className="text-3xl font-bold text-emerald-600">{impact.number}</span>
                     </div>
-                    <div className="text-red-200">{impact.label}</div>
+                    <div className="text-sm text-gray-600">{impact.label}</div>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Right - Modern Image with Design Elements */}
+            <div className="relative">
+              {/* Main Image Container */}
+              <div className="relative z-10">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80"
+                    alt="Fondation DOGUI-KARALA"
+                    className="w-full h-[500px] object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-72 h-72 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-3xl -z-0"></div>
+              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-gradient-to-tr from-emerald-300/30 to-teal-300/30 rounded-full -z-0"></div>
+              
+              {/* Floating Card */}
+              <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl p-6 max-w-xs z-20">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-gray-900">100%</div>
+                    <div className="text-sm text-gray-600">Engagement social</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -201,7 +233,7 @@ export default function Fondation() {
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Programmes</h2>
@@ -214,7 +246,7 @@ export default function Fondation() {
             {programs.map((program, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-emerald-100"
               >
                 <div className="text-5xl mb-4">{program.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{program.title}</h3>
@@ -225,7 +257,7 @@ export default function Fondation() {
                     {program.actions.map((action, idx) => (
                       <li key={idx} className="flex items-start text-sm">
                         <svg
-                          className="w-4 h-4 text-red-600 mr-2 flex-shrink-0 mt-0.5"
+                          className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0 mt-0.5"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"
@@ -248,164 +280,31 @@ export default function Fondation() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Projets en cours</h2>
-            <p className="text-xl text-gray-600">
-              Découvrez nos initiatives actuelles
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span
-                      className={`text-xs font-bold px-3 py-1 rounded-full ${
-                        project.status === "En cours"
-                          ? "bg-blue-100 text-blue-700"
-                          : "bg-green-100 text-green-700"
-                      }`}
-                    >
-                      {project.status}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-600 text-sm">{project.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Valeurs</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Les principes qui guident notre action
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center bg-white p-8 rounded-xl shadow-md">
+              <div key={index} className="group text-center bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-emerald-100">
                 <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
+                <h3 className="font-bold text-xl mb-3 text-gray-900">{value.title}</h3>
+                <p className="text-gray-600">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How to Help Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Comment nous soutenir ?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Rejoignez-nous dans notre mission de transformation sociale
-            </p>
-          </div>
+     
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-red-50 p-8 rounded-xl text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Faire un don</h3>
-              <p className="text-gray-600 mb-6">
-                Votre contribution nous aide à élargir nos actions
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-3 bg-red-700 text-white font-bold rounded-lg hover:bg-red-600 transition-all"
-              >
-                Contribuer
-              </Link>
-            </div>
-
-            <div className="bg-red-50 p-8 rounded-xl text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Devenir bénévole</h3>
-              <p className="text-gray-600 mb-6">
-                Offrez votre temps et vos compétences
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-3 bg-red-700 text-white font-bold rounded-lg hover:bg-red-600 transition-all"
-              >
-                S'engager
-              </Link>
-            </div>
-
-            <div className="bg-red-50 p-8 rounded-xl text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Partenariat</h3>
-              <p className="text-gray-600 mb-6">
-                Collaborons pour un impact plus grand
-              </p>
-              <Link
-                href="/contact"
-                className="inline-block px-6 py-3 bg-red-700 text-white font-bold rounded-lg hover:bg-red-600 transition-all"
-              >
-                Collaborer
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-red-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Ensemble, changeons des vies
-          </h2>
-          <p className="text-xl mb-8 text-red-100">
-            Rejoignez notre mission pour un avenir meilleur pour tous
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-white text-red-900 font-bold rounded-lg hover:bg-red-50 transition-all"
-            >
-              Nous contacter
-            </Link>
-            <Link
-              href="/entities"
-              className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-500 transition-all"
-            >
-              Découvrir nos autres entités
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

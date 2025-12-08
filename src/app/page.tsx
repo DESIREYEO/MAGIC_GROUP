@@ -30,49 +30,6 @@ export default function Home() {
     }
   ];
 
-  const services = [
-    {
-      icon: "💼",
-      title: "Consulting",
-      description: "Expertise et conseil stratégique pour votre développement"
-    },
-    {
-      icon: "🛒",
-      title: "Commerce",
-      description: "Solutions commerciales innovantes et performantes"
-    },
-    {
-      icon: "💻",
-      title: "Informatique & NTIC",
-      description: "Technologies de pointe pour votre transformation digitale"
-    },
-    {
-      icon: "🏗️",
-      title: "Construction",
-      description: "Projets de construction de qualité et durables"
-    },
-    {
-      icon: "🏨",
-      title: "Hôtellerie",
-      description: "Services hôteliers d'excellence"
-    },
-    {
-      icon: "🚛",
-      title: "Transport",
-      description: "Solutions logistiques et transport fiables"
-    },
-    {
-      icon: "🌾",
-      title: "Agro-industrie",
-      description: "Innovation dans le secteur agricole"
-    },
-    {
-      icon: "❤️",
-      title: "Fondation sociale",
-      description: "Engagement pour le développement communautaire"
-    },
-  ];
-
   const entities = [
     {
       name: "Multi Business Center",
@@ -92,6 +49,68 @@ export default function Home() {
       image: "/images/fondation2.jpg",
       link: "/entities/fondation"
     },
+  ];
+
+  const testimonials = [
+    {
+      name: "Aminata Koné",
+      role: "Directrice, Entreprise Ivoirienne",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+      text: "Le Multi Business Center nous a accompagnés dans notre transformation digitale. Leur expertise en NTIC et leur approche personnalisée ont permis à notre entreprise de moderniser nos processus et d'augmenter notre productivité de 40%."
+    },
+    {
+      name: "Kouassi Yao",
+      role: "Agriculteur, Membre SCOOP",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      text: "Grâce à la SCOOP DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
+    },
+    {
+      name: "Fatoumata Diallo",
+      role: "Bénéficiaire, Fondation",
+      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&q=80",
+      text: "La Fondation DOGUI-KARALA a changé ma vie. Le programme de formation professionnelle m'a permis de créer ma propre entreprise et de devenir financièrement indépendante. Aujourd'hui, j'emploie 5 personnes."
+    },
+    {
+      name: "Jean-Baptiste Kouadio",
+      role: "Entrepreneur, Client MBC",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      text: "Le service de consulting du MBC a été déterminant pour le lancement de mon projet hôtelier. Leur connaissance du marché ivoirien et leur réseau de partenaires nous ont fait gagner un temps précieux."
+    }
+  ];
+
+  const partners = [
+    {
+      name: "Banque Mondiale",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png"
+    },
+    {
+      name: "PNUD",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/UNDP_logo.svg/300px-UNDP_logo.svg.png"
+    },
+    {
+      name: "FAO",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/FAO_logo.svg/300px-FAO_logo.svg.png"
+    },
+    {
+      name: "UNICEF",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UNICEF_Logo.svg/300px-UNICEF_Logo.svg.png"
+    },
+    {
+      name: "Orange",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/300px-Orange_logo.svg.png"
+    },
+    {
+      name: "MTN",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MTN_Logo.svg/300px-MTN_Logo.svg.png"
+    },
+    {
+      name: "Total Energies",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TotalEnergies_logo.svg/300px-TotalEnergies_logo.svg.png"
+    },
+    {
+      name: "Ecobank",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ecobank_Transnational_Incorporated_logo.svg/300px-Ecobank_Transnational_Incorporated_logo.svg.png"
+    }
   ];
 
   useEffect(() => {
@@ -197,11 +216,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section - NOUVELLE SECTION */}
+      {/* About Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Contenu texte à gauche */}
             <div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 À Propos de <span className="text-emerald-700">MAGIC GROUP</span>
@@ -221,10 +239,6 @@ export default function Home() {
                   pour les services aux entreprises, la SCOOP DOGUI-KARALA pour le développement agricole, 
                   et la Fondation DOGUI-KARALA pour l'impact social.
                 </p>
-                <p>
-                  Ensemble, nous créons un écosystème intégré qui répond aux défis contemporains 
-                  tout en construisant un avenir durable pour tous.
-                </p>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
@@ -242,7 +256,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Image à droite */}
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <img
@@ -252,7 +265,6 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent"></div>
               </div>
-              {/* Stats overlay */}
               <div className="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6">
                 <div className="text-4xl font-bold text-emerald-700 mb-1">8</div>
                 <div className="text-sm text-gray-600">Secteurs d'activité</div>
@@ -267,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* Entities Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Entités</h2>
@@ -309,46 +321,34 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-emerald-600">
+      <section className="py-20 bg-gradient-to-br from-emerald-500 to-emerald-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Témoignages</h2>
+            <p className="text-xl text-emerald-100">Ce que disent nos clients et bénéficiaires</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Mariam Ba",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              },
-              {
-                name: "Juliette Gueye",
-                image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              },
-              {
-                name: "Mariam Ba",
-                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              },
-              {
-                name: "Juliette Gueye",
-                image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80",
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="text-center">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-2">
                 <div className="mb-4 flex justify-center">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
+                    className="w-20 h-20 rounded-full object-cover border-4 border-emerald-500 shadow-lg"
                   />
                 </div>
-                <p className="text-white text-sm mb-4 leading-relaxed px-2">
-                  {testimonial.text}
+                <div className="mb-4">
+                  <svg className="w-8 h-8 text-emerald-500 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                  </svg>
+                </div>
+                <p className="text-gray-700 text-sm mb-6 leading-relaxed italic">
+                  "{testimonial.text}"
                 </p>
-                <h3 className="text-xl font-bold text-white">{testimonial.name}</h3>
+                <div className="border-t border-gray-200 pt-4">
+                  <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
+                  <p className="text-sm text-emerald-600">{testimonial.role}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -356,37 +356,26 @@ export default function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 bg-gray-100">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-emerald-700 mb-4">Nos partenaires</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Partenaires</h2>
+            <p className="text-xl text-gray-600">Ils nous font confiance</p>
           </div>
-          <div className="relative">
-            <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition-all">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-16">
-              {[1, 2, 3, 4].map((partner) => (
-                <div
-                  key={partner}
-                  className="bg-white rounded-lg shadow-md p-8 flex items-center justify-center hover:shadow-xl transition-all h-40"
-                >
-                  <div className="text-gray-400 text-center">
-                    <div className="text-4xl mb-2">🤝</div>
-                    <p className="text-sm">Partenaire {partner}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition-all">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-xl shadow-md p-6 flex items-center justify-center hover:shadow-xl transition-all hover:scale-105 h-32 group"
+              >
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

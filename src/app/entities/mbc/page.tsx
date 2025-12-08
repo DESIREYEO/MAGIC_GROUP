@@ -105,7 +105,6 @@ export default function MBC() {
       <section className="relative py-16 bg-gradient-to-br from-emerald-50 via-emerald-100 to-teal-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-4">
-            <div className="text-5xl">🏢</div>
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Multi Business Center</h1>
               <p className="text-xl text-gray-700 mt-2">Votre partenaire business tout-en-un</p>
