@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Réseaux sociaux */}
             <div className="flex gap-3">
               <a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=61584697588261" 
                 className="w-10 h-10 bg-white/10 hover:bg-emerald-500 rounded-lg flex items-center justify-center transition-all hover:scale-110"
                 aria-label="Facebook"
               >
@@ -196,7 +196,7 @@ export default function Footer() {
 
         {/* Séparateur et Copyright */}
         <div className="border-t border-gray-700 pt-8">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-gray-400 text-sm text-center md:text-center">
               © {currentYear} MAGIC GROUP. Tous droits réservés.
             </p>
         </div>

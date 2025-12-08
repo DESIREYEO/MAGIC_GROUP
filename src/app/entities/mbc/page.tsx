@@ -1,46 +1,49 @@
+"use client"
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function MBC() {
   const services = [
     {
       title: "Consulting",
       description: "Conseil stratégique et accompagnement pour votre croissance d'entreprise",
-      icon: "💼",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
     },
     {
       title: "Commerce & E-commerce",
       description: "Solutions commerciales complètes et développement de votre présence en ligne",
-      icon: "🛒",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
     },
     {
       title: "Informatique & NTIC",
       description: "Technologies de l'information et cybersécurité pour votre transformation digitale",
-      icon: "💻",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
     },
     {
       title: "Construction",
       description: "Réalisation de projets de construction et travaux immobiliers",
-      icon: "🏗️",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80",
     },
     {
       title: "Hôtellerie",
       description: "Services hôteliers d'excellence et hébergement de qualité",
-      icon: "🏨",
+      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",
     },
     {
       title: "Transport",
       description: "Solutions de transport et logistique adaptées à vos besoins",
-      icon: "🚛",
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80",
     },
     {
       title: "Agro-industrie",
       description: "Production et transformation de produits agricoles",
-      icon: "🌾",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80",
     },
     {
       title: "Formation",
       description: "Programmes de formation professionnelle et développement des compétences",
-      icon: "📚",
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80",
     },
   ];
 
@@ -62,6 +65,31 @@ export default function MBC() {
       description: "Accès à un écosystème de partenaires et d'opportunités",
     },
   ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1;
+
+    const autoScroll = () => {
+      scrollPosition += scrollSpeed;
+      
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.scrollLeft = scrollPosition;
+    };
+
+    const intervalId = setInterval(autoScroll, 30);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="min-h-screen bg-emerald-50 text-gray-900 font-sans">
       {/* Hero Section */}
@@ -143,7 +171,7 @@ export default function MBC() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-emerald-50">
+      <section className="py-24 bg-gradient-to-b from-white to-emerald-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
             Nos Domaines d'Intervention
@@ -153,18 +181,41 @@ export default function MBC() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {services.map((service, index) => (
+        <div 
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide px-6 md:px-12"
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {/* Dupliquer les services pour un défilement infini */}
+          {[...services, ...services].map((service, index) => (
             <div
               key={index}
-              className="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 hover:bg-emerald-50"
+              className="group flex-shrink-0 w-80 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 overflow-hidden"
             >
-              <div className="text-6xl mb-6 group-hover:scale-110 transition-transform">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-700 leading-relaxed">{service.description}</p>
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>
+
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </section>
 
       {/* Advantages Section */}

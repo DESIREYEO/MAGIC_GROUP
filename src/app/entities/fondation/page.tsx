@@ -1,11 +1,14 @@
+"use client"
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function Fondation() {
   const programs = [
     {
       title: "Éducation",
       description: "Programmes de soutien scolaire et distribution de fournitures",
-      icon: "📚",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=80",
       actions: [
         "Distribution de kits scolaires",
         "Bourses d'études",
@@ -16,7 +19,7 @@ export default function Fondation() {
     {
       title: "Santé",
       description: "Actions pour améliorer l'accès aux soins de santé",
-      icon: "🏥",
+      image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=80",
       actions: [
         "Campagnes de sensibilisation",
         "Consultations médicales gratuites",
@@ -27,7 +30,7 @@ export default function Fondation() {
     {
       title: "Autonomisation des femmes",
       description: "Formations et accompagnement pour l'indépendance économique",
-      icon: "👩",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
       actions: [
         "Formation professionnelle",
         "Microcrédits",
@@ -38,7 +41,7 @@ export default function Fondation() {
     {
       title: "Personnes âgées",
       description: "Assistance et soins aux personnes du troisième âge",
-      icon: "👴",
+      image: "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=600&q=80",
       actions: [
         "Visites à domicile",
         "Assistance alimentaire",
@@ -49,7 +52,7 @@ export default function Fondation() {
     {
       title: "Développement communautaire",
       description: "Projets pour améliorer les conditions de vie",
-      icon: "🏘️",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
       actions: [
         "Accès à l'eau potable",
         "Électrification rurale",
@@ -60,7 +63,7 @@ export default function Fondation() {
     {
       title: "Actions humanitaires",
       description: "Réponse aux situations d'urgence et catastrophes",
-      icon: "❤️",
+      image: "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80",
       actions: [
         "Aide d'urgence",
         "Distribution alimentaire",
@@ -99,6 +102,31 @@ export default function Fondation() {
       icon: "🌱",
     },
   ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1;
+
+    const autoScroll = () => {
+      scrollPosition += scrollSpeed;
+      
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.scrollLeft = scrollPosition;
+    };
+
+    const intervalId = setInterval(autoScroll, 30);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="min-h-screen bg-emerald-50 text-gray-900 font-sans">
       {/* Hero Section */}
@@ -176,7 +204,7 @@ export default function Fondation() {
       </section>
 
       {/* Programs Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-emerald-50">
+      <section className="py-24 bg-gradient-to-b from-white to-emerald-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
             Nos Programmes
@@ -186,34 +214,58 @@ export default function Fondation() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {programs.map((program, index) => (
+        <div 
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide px-6 md:px-12"
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {/* Dupliquer les programmes pour un défilement infini */}
+          {[...programs, ...programs].map((program, index) => (
             <div
               key={index}
-              className="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 hover:bg-emerald-50"
+              className="group flex-shrink-0 w-96 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 overflow-hidden"
             >
-              <div className="text-6xl mb-8 group-hover:scale-110 transition-transform">{program.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg">{program.description}</p>
-              <div className="border-t border-emerald-100 pt-6">
-                <h4 className="font-bold text-lg text-gray-900 mb-4">Nos actions :</h4>
-                <div className="space-y-3">
-                  {program.actions.map((action, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg">
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={program.image} 
+                  alt={program.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">{program.description}</p>
+                <div className="border-t border-emerald-100 pt-6">
+                  <h4 className="font-bold text-lg text-gray-900 mb-4">Nos actions :</h4>
+                  <div className="space-y-3">
+                    {program.actions.map((action, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-7 h-7 bg-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-gray-700 font-medium">{action}</span>
                       </div>
-                      <span className="text-gray-700 font-medium">{action}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </section>
+
       {/* Values Section */}
       <section className="py-24 bg-gradient-to-b from-emerald-50 to-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-20">

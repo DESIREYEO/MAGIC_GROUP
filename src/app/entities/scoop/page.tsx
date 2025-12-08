@@ -1,36 +1,39 @@
+"use client"
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function SCOOP() {
   const services = [
     {
       title: "Formation agricole",
       description: "Programmes de formation pour les agriculteurs sur les techniques modernes",
-      icon: "📚",
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80",
     },
     {
       title: "Production agricole",
       description: "Culture responsable de produits vivriers et industriels de qualité",
-      icon: "🌱",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80",
     },
     {
       title: "Transformation",
       description: "Transformation des produits agricoles pour plus de valeur ajoutée",
-      icon: "⚙️",
+      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
     },
     {
       title: "Commercialisation",
       description: "Mise en marché collective des productions des membres",
-      icon: "🛒",
+      image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&q=80",
     },
     {
       title: "Conseil technique",
       description: "Accompagnement et expertise agricole pour optimiser les rendements",
-      icon: "🎯",
+      image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&q=80",
     },
     {
       title: "Accès aux intrants",
       description: "Fourniture d'intrants agricoles de qualité à prix compétitifs",
-      icon: "🌾",
+      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80",
     },
   ];
 
@@ -52,6 +55,30 @@ export default function SCOOP() {
       description: "Pratiques agricoles respectueuses de l'environnement",
     },
   ];
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollPosition = 0;
+    const scrollSpeed = 1;
+
+    const autoScroll = () => {
+      scrollPosition += scrollSpeed;
+      
+      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
+        scrollPosition = 0;
+      }
+      
+      scrollContainer.scrollLeft = scrollPosition;
+    };
+
+    const intervalId = setInterval(autoScroll, 30);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div className="min-h-screen bg-emerald-50 text-gray-900 font-sans">
@@ -134,7 +161,7 @@ export default function SCOOP() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-emerald-50">
+      <section className="py-24 bg-gradient-to-b from-white to-emerald-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
             Nos Services
@@ -144,18 +171,41 @@ export default function SCOOP() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {services.map((service, index) => (
+        <div 
+          ref={scrollRef}
+          className="flex gap-8 overflow-x-auto scrollbar-hide px-6 md:px-12"
+          style={{ scrollBehavior: 'auto' }}
+        >
+          {/* Dupliquer les services pour un défilement infini */}
+          {[...services, ...services].map((service, index) => (
             <div
               key={index}
-              className="group bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 hover:bg-emerald-50"
+              className="group flex-shrink-0 w-80 bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 border border-emerald-100 hover:border-emerald-200 overflow-hidden"
             >
-              <div className="text-6xl mb-8 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-700 leading-relaxed text-lg">{service.description}</p>
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{service.description}</p>
+              </div>
             </div>
           ))}
         </div>
+
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </section>
 
       {/* Advantages Section */}

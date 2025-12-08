@@ -74,7 +74,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3 max-w-7xl mx-auto">
+        <div className="grid gap-10 md:grid-cols-3 max-w-7xl mx-auto text-center">
           {[
             {
               title: "Notre Vision",

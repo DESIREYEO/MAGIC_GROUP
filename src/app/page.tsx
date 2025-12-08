@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import Link from "next/link";
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
     {
       id: 1,
       title: "Multi Business Center (MBC)",
+      subtitle: "Excellence et Innovation", // Ajoutez cette ligne
       description: "Services professionnels dans 7 domaines : Consulting, Commerce, Informatique & NTIC, Construction, Hôtellerie, Transport, Agro-industriel et Formation",
       image: "/images/mbc.jpg",
       cta: "Découvrir MBC"
@@ -17,6 +18,7 @@ export default function Home() {
     {
       id: 2,
       title: "SCOOP DOGUI-KARALA",
+      subtitle: "Agriculture Durable", // Ajoutez cette ligne
       description: "Société coopérative agricole spécialisée dans la formation, production, commercialisation et transformation des produits vivriers et industriels",
       image: "/images/agricole3.jpg",
       cta: "Découvrir SCOOP"
@@ -24,6 +26,7 @@ export default function Home() {
     {
       id: 3,
       title: "Fondation DOGUI-KARALA",
+      subtitle: "Impact Social", // Ajoutez cette ligne
       description: "Une fondation qui assiste, forme et travaille à améliorer la vie des femmes, enfants et personnes du troisième âge",
       image: "/images/fondation1.jpg",
       cta: "Découvrir la Fondation"
@@ -79,38 +82,17 @@ export default function Home() {
   ];
 
   const partners = [
-    {
-      name: "Banque Mondiale",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png"
-    },
-    {
-      name: "PNUD",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/UNDP_logo.svg/300px-UNDP_logo.svg.png"
-    },
+    
     {
       name: "FAO",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/FAO_logo.svg/300px-FAO_logo.svg.png"
     },
-    {
-      name: "UNICEF",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UNICEF_Logo.svg/300px-UNICEF_Logo.svg.png"
-    },
+    
     {
       name: "Orange",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/300px-Orange_logo.svg.png"
-    },
-    {
-      name: "MTN",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MTN_Logo.svg/300px-MTN_Logo.svg.png"
-    },
-    {
-      name: "Total Energies",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TotalEnergies_logo.svg/300px-TotalEnergies_logo.svg.png"
-    },
-    {
-      name: "Ecobank",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ecobank_Transnational_Incorporated_logo.svg/300px-Ecobank_Transnational_Incorporated_logo.svg.png"
     }
+    
   ];
 
   useEffect(() => {
@@ -121,7 +103,7 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: SetStateAction<number>) => {
     setCurrentSlide(index);
   };
 
