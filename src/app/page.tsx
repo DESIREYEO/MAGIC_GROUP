@@ -118,7 +118,6 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Section with Carousel */}
       <section className="relative h-screen overflow-hidden">
-        {/* Slides Container */}
         <div className="relative h-full">
           {heroSlides.map((slide, index) => (
             <div
@@ -160,7 +159,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full backdrop-blur-sm transition-all"
@@ -178,7 +176,6 @@ export default function Home() {
           </svg>
         </button>
 
-        {/* Dots Navigation */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-3">
           {heroSlides.map((_, index) => (
             <button
@@ -193,7 +190,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Scroll Indicator */}
         <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
           <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -201,40 +197,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* About Section - NOUVELLE SECTION */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Domaines d'Activité</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              8 secteurs stratégiques pour répondre à tous vos besoins
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="p-6 bg-gray-50 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-2 cursor-pointer border border-gray-100"
-              >
-                <div className="text-5xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Contenu texte à gauche */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                À Propos de <span className="text-emerald-700">MAGIC GROUP</span>
+              </h2>
+              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  MAGIC GROUP est un groupe pluridisciplinaire innovant basé en Côte d'Ivoire, 
+                  engagé dans le développement économique et social à travers 8 secteurs d'activité stratégiques.
+                </p>
+                <p>
+                  Fondé sur les valeurs d'excellence, d'intégrité et d'innovation, notre groupe 
+                  accompagne les entreprises, les agriculteurs et les communautés dans leur croissance 
+                  et leur transformation.
+                </p>
+                <p>
+                  Nous opérons à travers trois entités complémentaires : le Multi Business Center (MBC) 
+                  pour les services aux entreprises, la SCOOP DOGUI-KARALA pour le développement agricole, 
+                  et la Fondation DOGUI-KARALA pour l'impact social.
+                </p>
+                <p>
+                  Ensemble, nous créons un écosystème intégré qui répond aux défis contemporains 
+                  tout en construisant un avenir durable pour tous.
+                </p>
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/services"
-              className="inline-block px-8 py-3 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-600 transition-all"
-            >
-              En savoir plus
-            </Link>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/about"
+                  className="inline-block px-8 py-4 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-600 transition-all transform hover:scale-105"
+                >
+                  En savoir plus
+                </Link>
+                <Link
+                  href="/entities"
+                  className="inline-block px-8 py-4 bg-gray-100 text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-all transform hover:scale-105"
+                >
+                  Nos entités
+                </Link>
+              </div>
+            </div>
+
+            {/* Image à droite */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                  alt="MAGIC GROUP Team"
+                  className="w-full h-[500px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent"></div>
+              </div>
+              {/* Stats overlay */}
+              <div className="absolute -bottom-8 -left-8 bg-white rounded-xl shadow-xl p-6">
+                <div className="text-4xl font-bold text-emerald-700 mb-1">8</div>
+                <div className="text-sm text-gray-600">Secteurs d'activité</div>
+              </div>
+              <div className="absolute -top-8 -right-8 bg-emerald-700 rounded-xl shadow-xl p-6 text-white">
+                <div className="text-4xl font-bold mb-1">3</div>
+                <div className="text-sm text-emerald-100">Entités</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Entities Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Entités</h2>
@@ -248,7 +281,6 @@ export default function Home() {
                 key={index}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
-                {/* Image */}
                 <div className="h-64 overflow-hidden">
                   <img
                     src={entity.image}
@@ -257,14 +289,12 @@ export default function Home() {
                   />
                 </div>
                 
-                {/* Content */}
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{entity.name}</h3>
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                     {entity.description}
                   </p>
                   
-                  {/* Button */}
                   <Link
                     href={entity.link}
                     className="inline-block px-8 py-3 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition-all transform hover:scale-105"
@@ -278,7 +308,6 @@ export default function Home() {
         </div>
       </section>
 
-      
       {/* Testimonials Section */}
       <section className="py-20 bg-emerald-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -333,14 +362,12 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-emerald-700 mb-4">Nos partenaires</h2>
           </div>
           <div className="relative">
-            {/* Left Arrow */}
             <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition-all">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            {/* Partners Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-16">
               {[1, 2, 3, 4].map((partner) => (
                 <div
@@ -355,7 +382,6 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Right Arrow */}
             <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full hover:bg-gray-700 transition-all">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

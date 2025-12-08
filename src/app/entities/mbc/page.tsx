@@ -3,53 +3,63 @@ import Link from "next/link";
 export default function MBC() {
   const services = [
     {
-      title: "Domiciliation d'entreprise",
-      description: "Une adresse professionnelle prestigieuse pour votre société",
-      icon: "📍",
-    },
-    {
-      title: "Espaces de coworking",
-      description: "Bureaux modernes et équipés pour vos équipes",
+      title: "Consulting",
+      description: "Conseil stratégique et accompagnement pour votre croissance d'entreprise",
       icon: "💼",
     },
     {
-      title: "Salles de réunion",
-      description: "Espaces professionnels pour vos rendez-vous clients",
-      icon: "🏢",
+      title: "Commerce & E-commerce",
+      description: "Solutions commerciales complètes et développement de votre présence en ligne",
+      icon: "🛒",
     },
     {
-      title: "Services administratifs",
-      description: "Gestion du courrier, secrétariat et assistance",
-      icon: "📝",
+      title: "Informatique & NTIC",
+      description: "Technologies de l'information et cybersécurité pour votre transformation digitale",
+      icon: "💻",
     },
     {
-      title: "Accompagnement business",
-      description: "Conseil et support pour votre développement",
-      icon: "🎯",
+      title: "Construction",
+      description: "Réalisation de projets de construction et travaux immobiliers",
+      icon: "🏗️",
     },
     {
-      title: "Networking",
-      description: "Événements et mise en relation professionnelle",
-      icon: "🤝",
+      title: "Hôtellerie",
+      description: "Services hôteliers d'excellence et hébergement de qualité",
+      icon: "🏨",
+    },
+    {
+      title: "Transport",
+      description: "Solutions de transport et logistique adaptées à vos besoins",
+      icon: "🚛",
+    },
+    {
+      title: "Agro-industrie",
+      description: "Production et transformation de produits agricoles",
+      icon: "🌾",
+    },
+    {
+      title: "Formation",
+      description: "Programmes de formation professionnelle et développement des compétences",
+      icon: "📚",
     },
   ];
 
   const advantages = [
     {
-      title: "Flexibilité",
-      description: "Formules adaptées à vos besoins et votre budget",
+      title: "Expertise multisectorielle",
+      description: "Une équipe d'experts dans 8 domaines complémentaires",
     },
     {
-      title: "Professionnalisme",
-      description: "Infrastructures modernes et service de qualité",
+      title: "Solutions intégrées",
+      description: "Des services coordonnés pour maximiser votre efficacité",
     },
     {
-      title: "Localisation",
-      description: "Emplacement stratégique au cœur d'Abidjan",
+      title: "Accompagnement personnalisé",
+      description: "Un suivi sur mesure adapté à vos besoins spécifiques",
     },
     {
-      title: "Réseau",
-      description: "Accès à un écosystème d'entrepreneurs dynamiques",
+      title: "Réseau étendu",
+      description: "Accès à un écosystème de partenaires et d'opportunités",
     },
   ];
 
@@ -91,62 +101,95 @@ export default function MBC() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
+      {/* Hero Section - Reduced Height with Light Green */}
+      <section className="relative py-16 bg-gradient-to-br from-emerald-50 via-emerald-100 to-teal-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="text-6xl">🏢</div>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="text-5xl">🏢</div>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold">Multi Business Center</h1>
-              <p className="text-2xl text-blue-200 mt-2">Votre partenaire business tout-en-un</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900">Multi Business Center</h1>
+              <p className="text-xl text-gray-700 mt-2">Votre partenaire business tout-en-un</p>
             </div>
           </div>
-          <p className="text-xl max-w-3xl text-blue-100 mt-6">
-            Le MBC offre un environnement professionnel complet pour accompagner
-            entrepreneurs et entreprises dans leur développement.
+          <p className="text-lg max-w-3xl text-gray-600 mt-4">
+            Une société de prestation de services dans 8 domaines stratégiques : Consulting, Commerce, 
+            Informatique & NTIC, Construction, Hôtellerie, Transport, Agro-industrie et Formation.
           </p>
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* Intro Section - Text Left, Modern Image Right */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Text Content */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Bien plus qu'un simple bureau
+              <h2 className="text-4xl font-bold text-gray-900 mb-8">
+                Une plateforme intégrée de services
               </h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Le Multi Business Center (MBC) est bien plus qu'un simple espace de travail.
-                  C'est un écosystème complet conçu pour répondre à tous les besoins des
-                  entrepreneurs modernes.
+              <div className="space-y-5 text-gray-600 leading-relaxed">
+                <p className="text-lg">
+                  Le Multi Business Center (MBC) est une plateforme pluridisciplinaire qui intervient 
+                  dans 8 secteurs stratégiques pour offrir des solutions complètes et intégrées aux 
+                  entreprises et entrepreneurs.
                 </p>
-                <p>
-                  Que vous soyez une startup en phase de lancement, une PME en croissance ou
-                  une entreprise établie recherchant une présence à Abidjan, le MBC vous offre
-                  toutes les ressources nécessaires à votre réussite.
+                <p className="text-lg">
+                  De la consultation stratégique au commerce, en passant par l'informatique, la construction, 
+                  l'hôtellerie, le transport, l'agro-industrie et la formation, le MBC accompagne ses clients 
+                  à chaque étape de leur développement.
                 </p>
-                <p>
-                  Nos espaces modernes, nos services professionnels et notre communauté
-                  dynamique font du MBC le choix idéal pour votre activité.
+                <p className="text-lg">
+                  Notre approche multisectorielle nous permet de proposer des solutions sur mesure 
+                  qui répondent aux défis complexes du monde des affaires moderne.
                 </p>
               </div>
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-200">
+                  <div className="text-4xl font-bold text-emerald-600 mb-1">8</div>
+                  <div className="text-sm text-gray-600">Secteurs d'activité</div>
+                </div>
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-200">
+                  <div className="text-4xl font-bold text-emerald-600 mb-1">100+</div>
+                  <div className="text-sm text-gray-600">Clients satisfaits</div>
+                </div>
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-200">
+                  <div className="text-4xl font-bold text-emerald-600 mb-1">15+</div>
+                  <div className="text-sm text-gray-600">Années d'expertise</div>
+                </div>
+              </div>
             </div>
-            <div className="bg-blue-700 rounded-3xl p-12 text-white">
-              <h3 className="text-3xl font-bold mb-8">En chiffres</h3>
-              <div className="space-y-8">
-                <div>
-                  <div className="text-5xl font-bold mb-2">500+</div>
-                  <div className="text-blue-200">Entreprises domiciliées</div>
+
+            {/* Right - Modern Image with Design Elements */}
+            <div className="relative">
+              {/* Main Image Container */}
+              <div className="relative z-10">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
+                    alt="Multi Business Center"
+                    className="w-full h-[500px] object-cover"
+                  />
                 </div>
-                <div>
-                  <div className="text-5xl font-bold mb-2">50+</div>
-                  <div className="text-blue-200">Bureaux disponibles</div>
-                </div>
-                <div>
-                  <div className="text-5xl font-bold mb-2">24/7</div>
-                  <div className="text-blue-200">Accès sécurisé</div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute -top-6 -right-6 w-72 h-72 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-3xl -z-0"></div>
+              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-gradient-to-tr from-emerald-300/30 to-teal-300/30 rounded-full -z-0"></div>
+              
+              {/* Floating Card */}
+              <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-xl p-6 max-w-xs z-20">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-gray-900">100%</div>
+                    <div className="text-sm text-gray-600">Satisfaction client</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,20 +198,20 @@ export default function MBC() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-emerald-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Services</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Domaines d'Intervention</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Une gamme complète de services pour accompagner votre activité
+              8 secteurs stratégiques pour répondre à tous vos besoins professionnels
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all"
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-emerald-100"
               >
                 <div className="text-5xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
@@ -184,14 +227,17 @@ export default function MBC() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Pourquoi choisir le MBC ?</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Des avantages uniques pour votre réussite
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div key={index} className="group text-center p-8 rounded-2xl hover:bg-gradient-to-br hover:from-emerald-50 hover:to-teal-50 transition-all">
+                <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <svg
-                    className="w-8 h-8 text-blue-700"
+                    className="w-8 h-8 text-emerald-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -204,100 +250,15 @@ export default function MBC() {
                     />
                   </svg>
                 </div>
-                <h3 className="font-bold text-lg text-gray-900 mb-2">{advantage.title}</h3>
-                <p className="text-gray-600 text-sm">{advantage.description}</p>
+                <h3 className="font-bold text-xl mb-3 text-gray-900">{advantage.title}</h3>
+                <p className="text-gray-600">{advantage.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Nos Formules</h2>
-            <p className="text-xl text-gray-600">
-              Des solutions adaptées à chaque besoin
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pricing.map((plan, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl p-8 ${
-                  plan.popular
-                    ? "ring-4 ring-blue-700 shadow-2xl transform scale-105"
-                    : "shadow-lg"
-                }`}
-              >
-                {plan.popular && (
-                  <div className="bg-blue-700 text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
-                    Le plus populaire
-                  </div>
-                )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                <p className="text-3xl font-bold text-blue-700 mb-6">{plan.price}</p>
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg
-                        className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-gray-700">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/contact"
-                  className={`block w-full py-3 text-center font-bold rounded-lg transition-all ${
-                    plan.popular
-                      ? "bg-blue-700 text-white hover:bg-blue-600"
-                      : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                  }`}
-                >
-                  Nous contacter
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-700 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Prêt à rejoindre le MBC ?</h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Visitez nos locaux et découvrez comment nous pouvons accompagner votre entreprise
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-white text-blue-900 font-bold rounded-lg hover:bg-blue-50 transition-all"
-            >
-              Prendre rendez-vous
-            </Link>
-            <Link
-              href="/entities"
-              className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition-all"
-            >
-              Découvrir nos autres entités
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }
