@@ -9,7 +9,7 @@ export default function Home() {
   const heroSlides = [
     {
       id: 1,
-      title: "Bienvenue A Magic Group",
+      title: "Multi Business Center (MBC)",
       description: "Services professionnels dans 7 domaines : Consulting, Commerce, Informatique & NTIC, Construction, Hôtellerie, Transport, Agro-industriel et Formation",
       image: "/images/mbc.jpg",
       cta: "Découvrir MBC"
@@ -55,25 +55,25 @@ export default function Home() {
     {
       name: "Aminata Koné",
       role: "Directrice, Entreprise Ivoirienne",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+      image: "/images/temoignage1.jpg",
       text: "Le Multi Business Center nous a accompagnés dans notre transformation digitale. Leur expertise en NTIC et leur approche personnalisée ont permis à notre entreprise de moderniser nos processus et d'augmenter notre productivité de 40%."
     },
     {
       name: "Kouassi Yao",
       role: "Agriculteur, Membre SCOOP",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      image: "/images/temoignage2.jpg",
       text: "Grâce à la SCOOP DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
     },
     {
       name: "Fatoumata Diallo",
       role: "Bénéficiaire, Fondation",
-      image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&q=80",
+      image: "/images/temoignage3.jpg",
       text: "La Fondation DOGUI-KARALA a changé ma vie. Le programme de formation professionnelle m'a permis de créer ma propre entreprise et de devenir financièrement indépendante. Aujourd'hui, j'emploie 5 personnes."
     },
     {
       name: "Jean-Baptiste Kouadio",
       role: "Entrepreneur, Client MBC",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      image: "/images/temoignage4.jpg",
       text: "Le service de consulting du MBC a été déterminant pour le lancement de mon projet hôtelier. Leur connaissance du marché ivoirien et leur réseau de partenaires nous ont fait gagner un temps précieux."
     }
   ];
@@ -246,12 +246,6 @@ export default function Home() {
                   className="inline-block px-8 py-4 bg-emerald-700 text-white font-bold rounded-lg hover:bg-emerald-600 transition-all transform hover:scale-105"
                 >
                   En savoir plus
-                </Link>
-                <Link
-                  href="/entities"
-                  className="inline-block px-8 py-4 bg-gray-100 text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-all transform hover:scale-105"
-                >
-                  Nos entités
                 </Link>
               </div>
             </div>

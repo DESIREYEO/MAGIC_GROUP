@@ -62,123 +62,104 @@ export default function Entities() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-emerald-50 text-gray-900 font-sans">
       {/* Hero Section */}
-      <section className="relative py-12 bg-gradient-to-br from-emerald-400 to-emerald-300 text-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nos Entités</h1>
-          <p className="text-lg max-w-3xl text-gray-800">
+      <section className="relative py-24 bg-gradient-to-b from-emerald-100 via-emerald-200 to-white text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Nos Entités
+          </h1>
+          <p className="text-xl md:text-2xl text-emerald-800/80 max-w-2xl mx-auto">
             Trois structures complémentaires au service de l'excellence et du développement
           </p>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Un écosystème intégré
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              MAGIC GROUP s'appuie sur trois entités stratégiques qui travaillent en synergie
-              pour offrir des solutions complètes et impactantes dans leurs domaines respectifs.
-            </p>
-          </div>
+      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Un écosystème intégré</h2>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            MAGIC GROUP s'appuie sur trois entités stratégiques qui travaillent en synergie
+            pour offrir des solutions complètes et impactantes dans leurs domaines respectifs.
+          </p>
+        </div>
 
-          {/* Entities Cards */}
-          <div className="space-y-24">
-            {entities.map((entity, index) => (
-              <div
-                key={entity.id}
-                className={`flex flex-col ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                } gap-12 items-center`}
-              >
-                {/* Image Section */}
-                <div className="lg:w-1/2">
-                  <div className="relative group">
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                      <img
-                        src={entity.image}
-                        alt={entity.name}
-                        className="w-full h-[500px] object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-8">
-                        <h3 className="text-4xl font-bold text-white mb-2">
-                          {entity.shortName}
-                        </h3>
-                        <p className="text-xl text-white/90">{entity.tagline}</p>
-                      </div>
-                    </div>
-                    
-                    {/* Decorative Elements */}
-                    <div className={`absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br ${entity.color} opacity-20 rounded-3xl -z-10`}></div>
-                    <div className={`absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-tr ${entity.color} opacity-20 rounded-full -z-10`}></div>
-                  </div>
-                </div>
-
-                {/* Content Section */}
-                <div className="lg:w-1/2">
-                  <div className="bg-white p-8 rounded-2xl">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                      {entity.name}
+        {/* Entities Grid */}
+        <div className="grid gap-20 lg:gap-32">
+          {entities.map((entity, index) => (
+            <div
+              key={entity.id}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${
+                index % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
+              }`}
+            >
+              {/* Image Section */}
+              <div className="relative group">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl max-w-md mx-auto lg:mx-0">
+                  <img
+                    src={entity.image}
+                    alt={entity.name}
+                    className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-900/40 to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <h3 className="text-4xl font-bold text-white mb-2 drop-shadow-lg">
+                      {entity.shortName}
                     </h3>
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                      {entity.description}
-                    </p>
-
-                    <div className="mb-8">
-                      <h4 className="text-xl font-bold text-gray-900 mb-4">Nos services</h4>
-                      <ul className="space-y-3">
-                        {entity.services.map((service, idx) => (
-                          <li key={idx} className="flex items-start group/item">
-                            <div className={`w-6 h-6 bg-gradient-to-r ${entity.color} rounded-lg flex items-center justify-center mr-3 flex-shrink-0 mt-0.5 group-hover/item:scale-110 transition-transform`}>
-                              <svg
-                                className="w-4 h-4 text-white"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={3}
-                                  d="M5 13l4 4L19 7"
-                                />
-                              </svg>
-                            </div>
-                            <span className="text-gray-700 text-lg">{service}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <Link
-                      href={entity.link}
-                      className={`inline-flex items-center px-8 py-4 bg-gradient-to-r ${entity.color} text-white font-bold rounded-xl hover:shadow-xl transition-all transform hover:scale-105`}
-                    >
-                      Découvrir {entity.shortName}
-                      <svg
-                        className="w-5 h-5 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
+                    <p className="text-xl text-white/95 drop-shadow-md">{entity.tagline}</p>
                   </div>
                 </div>
+                
+                {/* Subtle Decorative Elements */}
+                <div className="absolute -top-12 -right-12 w-48 h-48 rounded-3xl bg-gradient-to-br from-emerald-400/20 to-emerald-500/20 -z-10 lg:opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
               </div>
-            ))}
-          </div>
+
+              {/* Content Section */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold mb-4">{entity.name}</h3>
+                  <p className="text-lg text-gray-700 leading-relaxed max-w-lg">{entity.description}</p>
+                </div>
+
+                <div>
+                  <div className="space-y-3">
+                    {entity.services.map((service, idx) => (
+                      <div key={idx} className="flex items-start gap-4 group/service">
+                        <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg group-hover/service:scale-110 transition-transform">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </div>
+                        <span className="text-lg text-gray-700 font-medium">{service}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  href={entity.link}
+                  className="group/link inline-flex items-center px-8 py-5 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 hover:from-emerald-600 hover:to-emerald-700"
+                >
+                  Découvrir {entity.shortName}
+                  <svg
+                    className="w-5 h-5 ml-3 group-hover/link:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

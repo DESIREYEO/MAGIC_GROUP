@@ -82,36 +82,32 @@ export default function News() {
       ? articles
       : articles.filter((article) => article.category === selectedCategory);
 
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    console.log("Newsletter subscription:", email);
-    setEmail("");
-  };
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-emerald-50 text-gray-900 font-sans">
       {/* Hero Section */}
-      <section className="relative py-12 bg-gradient-to-br from-emerald-400 to-emerald-300 text-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Actualités & Projets</h1>
-          <p className="text-lg max-w-3xl text-gray-800">
+      <section className="relative py-24 bg-gradient-to-b from-emerald-100 via-emerald-200 to-white text-center">
+        <div className="max-w-4xl mx-auto px-6 md:px-12">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+            Actualités & Projets
+          </h1>
+          <p className="text-xl md:text-2xl text-emerald-800/80 max-w-2xl mx-auto">
             Suivez nos dernières réalisations et nos projets en cours
           </p>
         </div>
       </section>
 
-      {/* Categories Filter */}
-      <section className="py-8 bg-white border-b sticky top-0 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-3 justify-center">
+      {/* Categories Filter - Sticky */}
+      <section className="sticky top-0 z-50 py-6 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-wrap gap-3 justify-center max-w-2xl mx-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-2.5 rounded-full font-medium transition-all shadow-sm ${
+                className={`px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 shadow-md group hover:shadow-xl ${
                   selectedCategory === category.id
-                    ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-md scale-105"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105"
+                    ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-emerald-500/25 scale-105"
+                    : "bg-white/80 text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 border border-gray-200 hover:border-emerald-200 hover:scale-[1.02]"
                 }`}
               >
                 {category.name}
@@ -122,47 +118,66 @@ export default function News() {
       </section>
 
       {/* Articles Grid */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {filteredArticles.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-xl text-gray-600">
-                Aucun article dans cette catégorie pour le moment
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredArticles.map((article) => (
-                <article
-                  key={article.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2 group"
-                >
-                  <div className="relative h-56 overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-emerald-700 text-xs font-bold rounded-full">
-                        {article.entity}
-                      </span>
-                      <span className="text-xs text-white font-medium">{article.date}</span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-emerald-600 transition-colors">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm leading-relaxed">{article.excerpt}</p>
-            
-                  </div>
-                </article>
-              ))}
-            </div>
-          )}
+      <section className="py-24 max-w-7xl mx-auto px-6 md:px-12">
+        <div className="mb-12 text-center">
+          <p className="text-sm text-emerald-700 font-medium uppercase tracking-wider">
+            {filteredArticles.length} {filteredArticles.length === 1 ? "article" : "articles"} trouvés
+          </p>
         </div>
+
+        {filteredArticles.length === 0 ? (
+          <div className="text-center py-32">
+            <div className="w-24 h-24 mx-auto mb-8 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-3xl flex items-center justify-center">
+              <svg className="w-12 h-12 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Aucun article</h3>
+            <p className="text-lg text-gray-600 max-w-md mx-auto">
+              Aucun article dans cette catégorie pour le moment
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredArticles.map((article) => (
+              <article
+                key={article.id}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02]"
+              >
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden bg-gradient-to-br from-emerald-50 to-emerald-100">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/70 via-emerald-900/30 to-transparent" />
+                  
+                  {/* Meta Info */}
+                  <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+                    <span className="px-4 py-2 bg-white/95 backdrop-blur-sm text-emerald-700 text-xs font-bold rounded-2xl shadow-lg">
+                      {article.entity}
+                    </span>
+                    <span className="text-xs text-white/90 font-medium bg-black/20 backdrop-blur-sm px-3 py-1 rounded-xl">
+                      {article.date}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-emerald-600 transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-lg">
+                    {article.excerpt}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );
