@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-2 mt-[-50px]">
             <div className="w-37 h-37">
-  <img src="/images/logosf.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
+  <img src="/images/logotexte.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
 
 </div>
 
@@ -131,7 +131,7 @@ export default function Footer() {
                   <svg className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  SCOOP DOGUI-KARALA
+                  COOPERATIVE DOGUI-KARALA
                 </Link>
               </li>
               <li>

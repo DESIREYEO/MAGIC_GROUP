@@ -86,7 +86,7 @@ export default function SCOOP() {
       <section className="relative py-24 bg-gradient-to-b from-emerald-100 via-emerald-200 to-white text-center">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
-            SCOOP DOGUI-KARALA
+            COOPERATIVE SCOOPS DOGUI-KARALA
           </h1>
           <p className="text-xl md:text-2xl text-emerald-800/80 mb-8 max-w-2xl mx-auto">
             L'agriculture collaborative et durable
@@ -107,7 +107,7 @@ export default function SCOOP() {
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed max-w-xl">
               <p>
-                La SCOOP DOGUI-KARALA est une société coopérative agricole qui œuvre pour
+                La SCOOPS DOGUI-KARALA est une société coopérative agricole qui œuvre pour
                 le développement du secteur agricole en Côte d'Ivoire. Nous regroupons des
                 agriculteurs déterminés à améliorer leurs conditions de vie et leurs pratiques.
               </p>
@@ -212,7 +212,7 @@ export default function SCOOP() {
       <section className="py-24 max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Pourquoi rejoindre la SCOOP ?
+            Pourquoi rejoindre la SCOOPS ?
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Des avantages uniques pour votre réussite agricole
