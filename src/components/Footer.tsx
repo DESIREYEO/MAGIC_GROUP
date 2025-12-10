@@ -173,7 +173,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Téléphone</p>
                   <a href="tel:+225XXXXXXXXXX" className="text-gray-300 hover:text-emerald-400 transition-colors">
-                  (+225) 27 22 26 30 39 
+                  (+225) 27 24 39 30 53  
                   </a>
                 </div>
               </li>
@@ -186,7 +186,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Email</p>
                   <a href="mailto:contact@magicgroup.com" className="text-gray-300 hover:text-emerald-400 transition-colors">
-                  multibusinesscenter@gmail.com
+                  magicgroup.multiservices <br /> @gmail.com
                   </a>
                 </div>
               </li>
