@@ -81,7 +81,7 @@ export default function Home() {
   ];
 
   const partners = [
-    { name: "MBC", logo: "/images/LOGO-MBCSF.png" },
+    { name: "MBC", logo: "/images/LOGO-MBC.png" },
     { name: "FONDATION", logo: "/images/LOGO-FONDATIONSF.png" },
     { name: "SCOOPS", logo: "/images/LOGO-SCOOPSSF.png" }
   ];
@@ -328,24 +328,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Section - RESPONSIVE */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+     {/* Partners Section - RESPONSIVE */}
+     <section className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Nos Partenaires</h2>
             <p className="text-lg sm:text-xl text-gray-600">Ils nous font confiance</p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center sm:items-center gap-6 sm:gap-10 md:gap-12 lg:gap-16">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="bg-gray-50 rounded-xl shadow-md p-4 sm:p-6 flex items-center justify-center hover:shadow-xl transition-all hover:scale-105 h-24 sm:h-28 md:h-32 group"
+                className="flex items-center justify-center w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 group cursor-pointer mx-auto"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-12 sm:max-h-14 md:max-h-16 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all"
+                  className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             ))}

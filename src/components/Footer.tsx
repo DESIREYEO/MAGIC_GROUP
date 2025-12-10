@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-2 mt-[-50px]">
             <div className="w-37 h-37">
-  <img src="/images/logotexte.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
+  <img src="/images/LOGO-MG.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
 
 </div>
 

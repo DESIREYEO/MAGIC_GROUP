@@ -68,7 +68,7 @@ export default function Navigation() {
           <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-2">
   <div className="w-37 h-37">
-    <img src="/images/logotexte.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
+    <img src="/images/LOGO-MG.png" alt="MAGIC GROUP logo" className="w-full h-full object-contain" />
   </div>
 
 </Link>
