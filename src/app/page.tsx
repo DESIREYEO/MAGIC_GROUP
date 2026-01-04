@@ -8,7 +8,7 @@ export default function Home() {
   const heroSlides = [
     {
       id: 1,
-      title: "Multi Business Center (MBC)",
+      title: "MULTI BUSINESS CENTER (MBC)",
       subtitle: "Excellence et Innovation",
       description: "Services professionnels dans 7 domaines : Consulting, Commerce, Informatique & NTIC, Construction, Hôtellerie, Transport, Agro-industriel et Formation",
       image: "/images/mbc.jpg",
@@ -24,7 +24,7 @@ export default function Home() {
     },
     {
       id: 3,
-      title: "Fondation DOGUI-KARALA",
+      title: "FONDATION DOGUI-KARALA",
       subtitle: "Impact Social",
       description: "Une fondation qui assiste, forme et travaille à améliorer la vie des femmes, enfants et personnes du troisième âge",
       image: "/images/fondation1.jpg",
@@ -34,7 +34,7 @@ export default function Home() {
 
   const entities = [
     {
-      name: "Multi Business Center",
+      name: "MULTI BUSINESS CENTER",
       description: "Une société de prestation de services dans divers domaines : Consulting, Commerce, Informatique & NTIC, Construction, Hôtellerie, Transport, Agro-industriel et Formation",
       image: "/images/mbc.jpg",
       link: "/entities/mbc"
@@ -46,7 +46,7 @@ export default function Home() {
       link: "/entities/scoop"
     },
     {
-      name: "Fondation DOGUI-KARALA",
+      name: "FONDATION DOGUI-KARALA",
       description: "Une fondation qui assiste, forme et travaille à améliorer la vie des femmes, enfants et les personnes de troisièmes âges",
       image: "/images/fondation2.jpg",
       link: "/entities/fondation"
@@ -58,19 +58,19 @@ export default function Home() {
       name: "Aminata Koné",
       role: "Directrice, Entreprise Ivoirienne",
       image: "/images/temoignage1.jpg",
-      text: "Le Multi Business Center nous a accompagnés dans notre transformation digitale. Leur expertise en NTIC et leur approche personnalisée ont permis à notre entreprise de moderniser nos processus et d'augmenter notre productivité de 40%."
+      text: "Le MULTI BUSINESS CENTER nous a accompagnés dans notre transformation digitale. Leur expertise en NTIC et leur approche personnalisée ont permis à notre entreprise de moderniser nos processus et d'augmenter notre productivité de 40%."
     },
     {
       name: "Kouassi Yao",
       role: "Agriculteur, Membre SCOOPS",
       image: "/images/temoignage2.jpg",
-      text: "Grâce à la Coopérative SCOOPS DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
+      text: "Grâce à la COOPERATIVE SCOOPS DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
     },
     {
       name: "Fatoumata Diallo",
       role: "Bénéficiaire, Fondation",
       image: "/images/temoignage3.jpg",
-      text: "La Fondation DOGUI-KARALA a changé ma vie. Le programme de formation professionnelle m'a permis de créer ma propre entreprise et de devenir financièrement indépendante. Aujourd'hui, j'emploie 5 personnes."
+      text: "La FONDATION DOGUI-KARALA a changé ma vie. Le programme de formation professionnelle m'a permis de créer ma propre entreprise et de devenir financièrement indépendante. Aujourd'hui, j'emploie 5 personnes."
     },
     {
       name: "Jean-Baptiste Kouadio",
@@ -214,9 +214,9 @@ export default function Home() {
                   et leur transformation.
                 </p>
                 <p className="hidden sm:block">
-                  Nous opérons à travers trois entités complémentaires : le Multi Business Center (MBC) 
-                  pour les services aux entreprises, la Coopérative SCOOPS DOGUI-KARALA pour le développement agricole, 
-                  et la Fondation DOGUI-KARALA pour l'impact social.
+                  Nous opérons à travers trois entités complémentaires : le MULTI BUSINESS CENTER (MBC) 
+                  pour les services aux entreprises, la COOPERATIVE SCOOPS DOGUI-KARALA pour le développement agricole, 
+                  et la FONDATION DOGUI-KARALA pour l'impact social.
                 </p>
               </div>
               <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">

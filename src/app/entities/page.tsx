@@ -4,7 +4,7 @@ export default function Entities() {
   const entities = [
     {
       id: "mbc",
-      name: "Multi Business Center",
+      name: "MULTI BUSINESS CENTER",
       shortName: "MBC",
       tagline: "Votre partenaire business tout-en-un",
       description:
@@ -43,7 +43,7 @@ export default function Entities() {
     },
     {
       id: "fondation",
-      name: "Fondation DOGUI-KARALA",
+      name: "FONDATION DOGUI-KARALA",
       shortName: "Fondation",
       tagline: "Ensemble pour un avenir meilleur",
       description:

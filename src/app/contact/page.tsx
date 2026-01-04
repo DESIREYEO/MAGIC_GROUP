@@ -38,7 +38,6 @@ export default function Contact() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-1 sm:mb-2">Adresse</h3>
-                      <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Camp Commando, Abobo</p>
                       <p className="text-base sm:text-lg text-gray-700 leading-relaxed">Abidjan, Côte d'Ivoire</p>
                     </div>
                   </div>
@@ -141,7 +140,7 @@ export default function Contact() {
                           </svg>
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="text-xs sm:text-sm font-semibold text-purple-900 mb-0.5">Fondation DOGUI-KARALA</p>
+                          <p className="text-xs sm:text-sm font-semibold text-purple-900 mb-0.5">FONDATION DOGUI-KARALA</p>
                           <p className="text-xs sm:text-sm text-purple-700 truncate">fondationdoguikarala@gmail.com</p>
                         </div>
                         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 flex-shrink-0 opacity-0 group-hover/email:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,7 +205,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Localisation MAGIC GROUP - Camp Commando, Abobo, Abidjan"
+                title="Localisation MAGIC GROUP - Abidjan, Côte d'ivoire"
                 className="w-full h-250"
               />
             </div>

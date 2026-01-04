@@ -28,7 +28,7 @@ export default function About() {
               </p>
               <p>
                 Aujourd'hui, nous sommes fiers de compter parmi nos rangs trois entités majeures : 
-                le Multi Business Center, la SCOOP DOGUI-KARALA et la Fondation DOGUI-KARALA, 
+                le MULTI BUSINESS CENTER, la SCOOP DOGUI-KARALA et la FONDATION DOGUI-KARALA, 
                 chacune apportant sa pierre à l'édifice du développement durable.
               </p>
             </div>

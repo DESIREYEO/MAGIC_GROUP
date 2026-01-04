@@ -123,7 +123,7 @@ export default function Footer() {
                   <svg className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  Multi Business Center
+                  MULTI BUSINESS CENTER
                 </Link>
               </li>
               <li>
@@ -139,7 +139,7 @@ export default function Footer() {
                   <svg className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  Fondation DOGUI-KARALA
+                  FONDATION DOGUI-KARALA
                 </Link>
               </li>
             </ul>
@@ -161,7 +161,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Adresse</p>
-                  <span className="text-gray-300">Camp Commando, Abobo<br/>Abidjan, Côte d'Ivoire</span>
+                  <span className="text-gray-300">Abidjan, Côte d'Ivoire</span>
                 </div>
               </li>
               <li className="flex items-start gap-3 group">
