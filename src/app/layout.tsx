@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   keywords: "magic group, consulting, commerce, informatique, construction, hôtellerie, transport, agro-industrie, fondation sociale, côte d'ivoire",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -86,7 +86,7 @@ export default function SCOOP() {
       <section className="relative py-24 bg-gradient-to-b from-emerald-100 via-emerald-200 to-white text-center">
         <div className="max-w-4xl mx-auto px-6 md:px-12">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
-            COOPERATIVE SCOOPS DOGUI-KARALA
+            SCOOPS DOGUI-KARALA
           </h1>
           <p className="text-xl md:text-2xl text-emerald-800/80 mb-8 max-w-2xl mx-auto">
             L'agriculture collaborative et durable

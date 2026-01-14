@@ -16,7 +16,7 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "COOPERATIVE SCOOPS DOGUI-KARALA",
+      title: "SCOOPS DOGUI-KARALA",
       subtitle: "Agriculture Durable",
       description: "Société coopérative agricole spécialisée dans la formation, production, commercialisation et transformation des produits vivriers et industriels",
       image: "/images/agricole3.jpg",
@@ -40,7 +40,7 @@ export default function Home() {
       link: "/entities/mbc"
     },
     {
-      name: "COOPERATIVE SCOOPS DOGUI-KARALA",
+      name: "SCOOPS DOGUI-KARALA",
       description: "Une société coopérative agricole qui réalise de la formation, production, commercialisation et la transformation des produits vivriers et industriels",
       image: "/images/agricole1.jpg",
       link: "/entities/scoop"
@@ -64,7 +64,7 @@ export default function Home() {
       name: "Kouassi Yao",
       role: "Agriculteur, Membre SCOOPS",
       image: "/images/temoignage2.jpg",
-      text: "Grâce à la COOPERATIVE SCOOPS DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
+      text: "Grâce à la SCOOPS DOGUI-KARALA, j'ai bénéficié de formations agricoles modernes et d'un accès aux marchés que je n'aurais jamais eu seul. Ma production a doublé et mes revenus ont considérablement augmenté."
     },
     {
       name: "Fatoumata Diallo",
@@ -142,9 +142,7 @@ export default function Home() {
                   
                   {/* Boutons responsive */}
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 max-w-md sm:max-w-none mx-auto">
-                    <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 text-sm sm:text-base">
-                      {slide.cta}
-                    </button>
+                   
                     <a
                       href="/contact"
                       className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-gray-900 transition-all transform hover:scale-105 text-sm sm:text-base text-center"
@@ -215,7 +213,7 @@ export default function Home() {
                 </p>
                 <p className="hidden sm:block">
                   Nous opérons à travers trois entités complémentaires : le MULTI BUSINESS CENTER (MBC) 
-                  pour les services aux entreprises, la COOPERATIVE SCOOPS DOGUI-KARALA pour le développement agricole, 
+                  pour les services aux entreprises, la SCOOPS DOGUI-KARALA pour le développement agricole, 
                   et la FONDATION DOGUI-KARALA pour l'impact social.
                 </p>
               </div>

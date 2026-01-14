@@ -23,7 +23,7 @@ export default function Footer() {
             {/* Réseaux sociaux */}
             <div className="flex gap-3">
               <a 
-                href="https://www.facebook.com/profile.php?id=61584697588261" 
+                href="https://www.facebook.com/profile.php?id=61586043755553" 
                 className="w-10 h-10 bg-white/10 hover:bg-emerald-500 rounded-lg flex items-center justify-center transition-all hover:scale-110"
                 aria-label="Facebook"
               >
@@ -131,7 +131,7 @@ export default function Footer() {
                   <svg className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                  COOPERATIVE DOGUI-KARALA
+                   SCOOPS DOGUI-KARALA
                 </Link>
               </li>
               <li>
@@ -173,7 +173,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Téléphone</p>
                   <a href="tel:+225XXXXXXXXXX" className="text-gray-300 hover:text-emerald-400 transition-colors">
-                  (+225) 27 24 39 30 53  
+                  (+225) 27 24 39 30 53 <br /> (+225)  27 22 26 30 39
                   </a>
                 </div>
               </li>

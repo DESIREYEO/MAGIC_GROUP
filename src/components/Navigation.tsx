@@ -25,7 +25,7 @@ export default function Navigation() {
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>(+225) 27 24 39 30 53 </span>
+                <span>(+225) 27 24 39 30 53 / (+225) 27 22 26 30 39 </span>
               </a>
               <a href="mailto:magicgroup.multiservices@gmail.com" className="flex items-center space-x-2 hover:text-emerald-100 transition-colors">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,7 @@ export default function Navigation() {
 
             {/* Social Media */}
             <div className="flex items-center space-x-4 ml-auto">
-              <a href="https://www.facebook.com/profile.php?id=61584697588261" className="hover:text-emerald-100 transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61586043755553" className="hover:text-emerald-100 transition-colors" aria-label="Facebook">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
@@ -150,7 +150,7 @@ export default function Navigation() {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  <span>(+225) 27 22 26 30 39</span>
+                  <span>(+225) 27 24 39 30 53 / (+225) 27 22 26 30 39</span>
                 </a>
                 <a href="mailto:magicgroup.multiservices@gmail.com" className="flex items-center space-x-2 text-sm text-gray-600">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
